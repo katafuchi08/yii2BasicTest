@@ -1,0 +1,12 @@
+#Mac環境ファイル
+*.DS_Store
+
+#キャッシュ系一括
+*.sass-cache
+*/cache/*
+
+
+# gulp
+gulpfile.js
+package.json
+node_modules/*
