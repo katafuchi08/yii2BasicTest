@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+
+.userRecruit {
+    // modifier
+    &--company {
+        // .userRecruit__title {
+        //     color: $color-company;
+        // }
+    }
+    // modifier
+    &--member {
+        // .userRecruit__title {
+        //     color: $color-member;
+        // }
+    }
+    &__title {
+        color: #FF0000;
+        font-size: 20px;
+    }
+    &__image {
+        width: 120px;
+        height: 90px;
+        background: #CCC;
+    }
+}
+
+
+.searchArea {
+    
+}
+

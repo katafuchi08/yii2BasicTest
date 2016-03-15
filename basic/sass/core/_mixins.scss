@@ -1,0 +1,284 @@
+@charset "utf-8";
+
+// ====================================================================
+// text系
+// --------------------------------------------------------------------
+
+// フォント
+@mixin font_default {
+  font-family: futura, Lato, "Avenir Next", Helvetica,  "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+@mixin font-mplus {
+  font-family: "mplus-1c-regular", Lato, Helvetica, YuGothic, '游ゴシック', sans-serif ,"メイリオ", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic";
+}
+
+@mixin font_face_mincho() {
+	font-family: "ＭＳ Ｐ明朝","MS PMincho","ヒラギノ明朝 Pro W3","Hiragino Mincho Pro",serif;
+}
+
+@mixin font-regular {
+  font-family: Lato, Helvetica, YuGothic, '游ゴシック', sans-serif ,"メイリオ", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic";
+}
+
+@mixin a_color {
+	text-decoration: none;
+	color: #000;
+}
+
+// リンクカラーを一括設定
+@mixin linkColor($color) {
+	color: $color;
+	&:hover, &:active, &:focus {
+		color: lighten($color, 20%);
+	}
+}
+
+// テキストアンチエイリアス
+@mixin smoothing {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// テキスト選択時背景色
+$prefixes: ("-moz-", "");
+@mixin selection($color, $background) {
+	@each $prefix in $prefixes {
+		::#{$prefix}selection {
+			color: $color;
+			background: $background;
+		}
+	}
+}
+
+// テキスト省略... IE対策は親に高さ持たせてhidden
+@mixin lineClamp($line: 1, $fixed-height: false, $line-height: 1.4) {
+  display: block;
+  overflow: hidden;
+  line-height: $line-height;
+  @if $line == 1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  } @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    max-height: #{$line * $line-height}em;
+  }
+  @if $fixed-height {
+    height: #{$line * $line-height}em;
+  }
+}
+
+// @for $i from 1 through 4 {
+//   .lineClamp-#{$i} {
+//     @include lineClamp($i);
+//   }
+//   .fixedLineClamp-#{$i} {
+//     @include lineClamp($i, true);
+//   }
+// }
+
+
+// プレースホルダー色変更: placeholder
+@mixin placeholderColor($color) {
+  &::-webkit-input-placeholder {
+    color:$color;
+  }
+  &:-moz-placeholder {
+    color:$color;
+    opacity: 1;
+  }
+  &::-moz-placeholder {
+    color:$color;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color:$color;
+  }
+}
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    opacity: 1;
+    @content;
+  }
+  &::-moz-placeholder {
+    opacity: 1;
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+
+
+// ====================================================================
+// 関数名: media
+// --------------------------------------------------------------------
+// 概要: ブレイクポイント毎のメディアクエリ
+// 引数:
+//   pc:       PC幅〜タブレット幅（1024px〜768px）
+//   sp:        タブレット幅〜スマートフォン幅（768px〜480px）
+//   iphone:    スマートフォン幅以下（480px以下）
+//   [整数]+px:  任意の幅（[整数]px以下）.l;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;////
+// 使用例:
+//   @include media(pc)    { width: auto; margin: 0 10px; }
+//   @include media(sp)     { width: 100%; margin: 0; }
+//   @include media(iphone) { float: none; margin: 0 auto; }
+//   @include media(800px)  { float: none; margin: 0 auto; }
+// 引用元: http://book.scss.jp/code/c5/04.html
+// 備考:
+// ====================================================================
+@mixin media($media-width) {
+	// ブレイクポイントを設定（固定値）
+	$bp-pc:      769px;
+	$bp-sp:       768px;
+	$bp-iphone:   480px;
+
+	@if $media-width == pc {
+		@media only screen and (min-width: $bp-pc) {
+			@content;
+		}
+	}
+	@else if $media-width == sp {
+		@media only screen and (max-width: $bp-sp) {
+			@content;
+		}
+	}
+	@else if $media-width == iphone {
+		@media only screen and (max-width: $bp-iphone) {
+			@content;
+		}
+	}
+	@else {
+		@media only screen and (min-width: $media-width) {
+			@content;
+		}
+	}
+}
+
+
+// ====================================================================
+// 絶対配置真ん中: position-center
+// --------------------------------------------------------------------
+// 使用例:
+//     .box {
+//         img {
+// 	           @include absPosition(5px, 20px, 10px, 15px);
+//         }
+//     }
+// ====================================================================
+
+@mixin position-center() {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+@mixin position-center--smallwrap() {
+	position: absolute;
+	top: -100%;
+	left: -100%;
+	right: -100%;
+	bottom: -100%;
+	margin: auto;
+}
+
+@mixin absPosition ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+// 初期値がある場合
+// @mixin position-center($width: 5px, $height:5px ) {
+// 	position: absolute;
+// 	height: 0;
+// 	top: 0;
+// 	right: 0;
+// 	bottom: 0;
+// 	left: 0;
+// 	margin: auto;
+// }
+
+
+// 三角(吹き出し等)
+@mixin module-triangle($size: 8px, $color: #000, $side: top, $position: 50%, $direction: regular) {
+  position: relative;
+  &::before {
+    content: "";
+    border: solid transparent;
+    display: inline-block;
+    position: absolute;
+    border-width: $size;
+    @if $direction == reverse {
+      @if $side == top {
+        border-bottom-color: $color;
+        margin-left: -$size;
+        left: $position;
+        bottom: -($size * 2);
+      }
+      @elseif $side == right {
+        border-left-color: $color;
+        margin-top: -$size;
+        left: -($size * 2);
+        top: $position;
+      }
+      @elseif $side == bottom {
+        border-top-color: $color;
+        margin-left: -$size;
+        left: $position;
+        top: -($size * 2);
+      }
+      @else {
+        border-right-color: $color;
+        margin-top: -$size;
+        right: -($size * 2);
+        top: $position;
+      }
+    }
+    @else {
+      @if $side == top {
+        border-bottom-color: $color;
+        margin-left: -$size;
+        left: $position;
+        top: -($size * 2);
+      }
+      @elseif $side == right {
+        border-left-color: $color;
+        margin-top: -$size;
+        right: -($size * 2);
+        top: $position;
+      }
+      @elseif $side == bottom {
+        border-top-color: $color;
+        margin-left: -$size;
+        left: $position;
+        bottom: -($size * 2);
+      }
+      @else {
+        border-right-color: $color;
+        margin-top: -$size;
+        left: -($size * 2);
+        top: $position;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

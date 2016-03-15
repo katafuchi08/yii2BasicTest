@@ -1,0 +1,138 @@
+/* ============
+* headlines
+============== */
+
+// // defult  extend
+// .headline-section {
+// 	margin: auto;
+// 	text-align: center;
+// }
+// // defult  extend
+// .headline-sup {
+// 	text-transform: uppercase;
+// 	line-height: 1.4;
+// 	font-size: 48px;
+// 	font-weight: 700;
+// 	&:after {
+// 		content: '';
+// 		display: block;
+// 		width: 35px;
+// 		height: 5px;
+// 		margin: 6px auto 18px;
+// 		text-align: inherit;
+// 		background: $color_caution;
+// 	}
+// }
+
+.md-title__outline {
+	background: #FF7C74;
+	// border-bottom: 2px solid $color_base;
+}
+
+.m-headline--borderBottom {
+	border-bottom: 2px solid $color_base;
+	.headline-title--page {
+		font-size: 25px;
+		font-weight: bold;
+		line-height: 2.2;
+	}
+}
+.m-headline--borderLeft {
+	border-left: 2px solid $color_base;
+	.headline-title--page {
+		margin-top: 40px;
+		padding-left: 10px;
+		font-size: 15px;
+		font-weight: bold;
+		line-height: 1.4;
+	}
+}
+
+
+.m-headline__title--wide {
+	margin: 35px auto;
+	font-size: 26px;
+	font-weight: bold;
+	line-height: 1.4;
+	text-align: center;
+}
+
+
+
+// .headline-description {
+// 	margin: 30px auto 0;
+// 	text-align: inherit;
+// 	color: inherit;
+// }
+
+// .headline-url {
+// 	font-size: 13px;
+// 	text-align: inherit;
+// 	a {
+// 		display: inline-block;
+// 		margin: auto;
+// 		padding: 10px;
+// 		text-align: center;
+// 		color: $color_caution;
+// 		&:after {
+// 			display: inline-block;
+// 			margin-left: 3px;
+// 			content: "\f08e";
+// 			font-family: 'FontAwesome';
+// 			font-size: 12px;
+// 		}
+// 	}
+// }
+
+
+// // white
+// .headline-section--white {
+// 	@extend .headline-section;
+// 	color: #FFF;
+// }
+
+// left
+// .headline-section--left {
+// 	text-align: left;
+// 	@extend .headline-sup;
+// 	.headline-sup {
+// 		&:after {
+// 			margin: 0;
+// 		}
+// 	}
+// }
+
+// // left
+// .headline-topline--left-white {
+// 	color: #FFF;
+// 	text-align: left;
+// 	.headline-title {
+// 		@extend .headline-sup;
+// 		font-size: 32px;
+// 		&:after {
+// 			margin: 10px 0 0;
+// 		}
+// 		span {
+// 			font-size: 28px;
+// 		}
+// 	}
+// }
+
+
+// // aside
+// .headline-aside {
+// 	margin: auto;
+// 	text-align: center;
+// }
+
+// .headline-section--actual {
+// 	text-align: center;
+// 	.headline-title {
+// 		@extend .headline-sup;
+// 		font-size: 42px;
+// 		span {
+// 			font-size: 28px;
+// 		}
+// 	}
+// }
+

@@ -1,0 +1,272 @@
+/* ============
+* contact
+============== */
+
+form {
+}
+// デフォルト設定
+// input,
+// textarea {
+// 	width: 100%;
+// 	padding: 12px;
+// 	list-height: 2;
+// 	font-size: 14px;
+// 	border: 1px solid #d2d2d2;
+// 	background: #FFF;
+// 	@include box-sizing(border-box);
+// 	@include border-radius(4px);
+// 	@include transition(all 0.30s ease-in-out);
+// 	@include placeholder-color(#d3d3d3);
+// 	outline: none;
+// }
+
+
+
+button:focus {
+	outline: none;
+}
+
+
+input[type="text"],
+input[type="password"],
+textarea {
+	width: 100%;
+	padding: 12px;
+	list-height: 2;
+	font-size: 14px;
+	border: 1px solid #d2d2d2;
+	background: #FFF;
+	box-sizing: border-box;
+	// @include border-radius(2px);
+	transition: all 0.30s ease-in-out;
+	// @include placeholder-color(#d3d3d3);
+	outline: none;
+	&:focus {
+		background: #f9fdff;
+		box-shadow: 0 0 5px rgba(81, 203, 238, 0.6);
+		border: 1px solid rgba(81, 203, 238, 0.6);
+	}
+}
+
+input.error,
+textarea.error {
+	width: 100%;
+	float: left;
+	background: lighten($color_caution, 45%);
+	box-shadow: 0 0 5px lighten($color_caution, 35%);
+	border: 1px solid lighten($color_caution, 25%);
+}
+
+input[type="checkbox"] {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	margin-right: 10px;
+	margin-left: 5px;
+	// -webkit-transform: scale(1.5);
+	// transform: scale(1.5);
+	// @include border-radius(20px);
+	// border: 1px solid #d2d2d2;
+	// background: #fafafa;
+	// -webkit-appearance:none;
+	// -moz-appearance:none;
+	// appearance:none;
+}
+input[type="radio"] {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	margin-right: 10px;
+	margin-left: 5px;
+	// -webkit-transform: scale(1.5);
+	// transform: scale(1.5);
+}
+
+.m-dropdown-common {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+  &:before, &:after {
+	  content: '';
+	  position: absolute;
+	  z-index: 2;
+	  top: 13px;
+	  right: 10px;
+	  width: 0;
+	  height: 0;
+	  pointer-events: none;
+	  border: 4px dashed;
+  }
+  &:before {
+	  border-bottom-style: solid;
+	  border-top: none;
+  }
+  &:after {
+	  margin-top: 7px;
+	  border-top-style: solid;
+	  border-bottom: none;
+  }
+	select {
+	  position: relative;
+	  width: 130%;
+	  margin: 0;
+	  padding: 9px 8px 12px 10px;
+	  height: 36px;
+	  line-height: 14px;
+	  font-size: 13px;
+	  text-shadow: 0 1px white;
+	  /* Fallback for IE 8 */
+	  background: #ffffff;
+	  /* "transparent" doesn't work with Opera */
+	  background: rgba(0, 0, 0, 0) !important;
+	  border: 0;
+	  border-radius: 0;
+	  -webkit-appearance: none;
+	}
+	select:focus {
+	  z-index: 3;
+	  width: 100%;
+	}
+	select > option {
+	  margin: 3px;
+	  padding: 6px 8px;
+	  text-shadow: none;
+	  border-radius: 3px;
+	  cursor: pointer;
+	}
+}
+
+.m-dropdown-head {
+  height: 38px;
+  width: 236px;
+  background: #ffffff;
+  border: 1px solid;
+  border-color: #AFD6D3;
+  &:before, &:after {
+	  border-color: #62A6A0 transparent;
+  }
+	select {
+	  color: #AFD6D3;
+	}
+	select:focus {
+	  color: #AFD6D3;
+	  outline: 2px solid #BCF2E1;
+	  outline-offset: -2px;
+	}
+	select > option {
+	  background: #f2f2f2;
+	}
+}
+
+.m-dropdown-gray {
+  height: 38px;
+  width: 141px;
+  background: #ffffff;
+  border: 1px solid;
+  border-color: #D5D5D5;
+  border-radius: 0;
+  &:before, &:after {
+	  border-color: #666 transparent;
+  }
+	select {
+	  color: #000;
+	}
+	select:focus {
+	  color: #000;
+	  outline: 2px solid #D5D5D5;
+	  outline-offset: -2px;
+	}
+	select > option {
+	  background: #f2f2f2;
+	}
+}
+
+
+.m-uploadButton {
+	position: relative;
+	display: inline-block;
+	width: 150px;
+	margin-top: 14px;
+	padding: 8px 5px;
+	font-size: 13px;
+	overflow: hidden;
+	color: $color_text_light;
+	text-align:center;
+	line-height: 20px;
+	cursor:pointer;
+	border: 1px solid #AFD6D3;
+	background: #EBFBFA;
+	border-radius: 2px;
+	transition: all, 0.4s;
+	&:hover {
+		color: #EBFBFA;
+		background: $color_text_light;
+	}
+	input[type=file] {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		opacity: 0;
+	}
+}
+input[type="text"].uploadValue {
+	display: none;
+	font-size: 10px;
+	// background: rgba(255,255,255,0.2);
+	border-radius: 3px;
+	padding: 3px;
+	color: #55a099;
+	border: 1px solid #AFD6D3;
+}
+// .input__file {
+// 	display: inline-block;
+// 	overflow: hidden;
+// 	position: relative;
+// 	padding: .5em;
+// 	border: 1px solid #999;
+// 	background-color: #eee;
+// 	input[type="file"] {
+// 	  opacity: 0;
+// 	  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+// 	  position: absolute;
+// 	  right: 0;
+// 	  top: 0;
+// 	  margin: 0;
+// 	  font-size: 100px;
+// 	  cursor: pointer;
+// 	}
+// }
+
+// errorMessage
+.help-block-error {
+	color: $color_caution;
+}
+
+
+
+.errorMessage {
+	color: $color_caution;
+}
+.errorSummary {
+	max-width: 900px;
+	width: 80%;
+	margin: 20px auto;
+	padding: 20px;
+}
+
+.errorSummary {
+	border-radius: 6px;
+	color: $color_caution;
+	background: lighten($color_caution, 45%);
+	border: 1px solid lighten($color_caution, 30%);
+	p {
+		color: $color_caution;
+	}
+	li {
+		color: $color_caution;
+	}
+}

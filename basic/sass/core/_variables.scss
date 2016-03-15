@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+
+$page_width: 1000px;
+$column_width_right: 310px;
+$column_width_left: 150px;
+
+
+$image_dir: '../images/';
+$image_path: '/images/';
+$px11 : 78.5%;
+$px12 : 85.7%;
+$px13 : 92.8%;
+$px15 : 107.1%;
+$px16 : 114.2%;
+$px17 : 121.4%;
+$px18 : 128.5%;
+$px20 : 142.8%;
+
+$color_base: #81D8D0; // turquoiseBlue
+$color_base_dark: #62A6A0; // turquoiseBlue > dark
+$color_base_more_dark: #255350; // turquoiseBlue > dark
+$color_base_light: #F5FAF9; // turquoiseBlue > light
+$color_accent: #D0B47B; // number等
+$color_text_base: #55A099; // 色付きテキスト
+$color_text_light: #63C0B8; // 色付きテキスト明るめフォーム等
+$color_text_link: #7BC7D5; // テキストリンク
+
+
+// btn
+$color_caution: #EE2344;
+// $color_purple: #530557;
+$color_important: #ef2a46;			// 料金赤色
+// $color_default: #24b4d9;				// 指定エリアなど
+
+$color_base_normal: #000000;		// 未定義
+$color_base_lighten: #000000;		// 未定義
+
+$color-company: #81D8D0; // turquoiseBlue
+$color-member: #D36638; // turquoiseBlue > dark

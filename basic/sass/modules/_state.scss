@@ -1,0 +1,217 @@
+/* ============
+* state
+============== */
+
+.is-img-center {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+.is-text--center {
+  text-align: center;
+}
+.is-text--right {
+  text-align: right;
+}
+.is-text--left {
+  text-align: left;
+}
+/* hidden */
+.is--hidden {
+  display: none;
+}
+/* block */
+.is--block {
+  display: block;
+}
+
+.is-caution {
+  color: #f75161;
+}
+
+.is-float--none {
+  float: none !important;
+}
+
+.is-link--text {
+  color: $color_base;
+  text-decoration: underline;
+}
+.is-link--arrow {
+    text-decoration: underline;
+    color: $color_base;
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 5px;
+      height: 8px;
+      margin-right: 3px;
+      background: url('#{$image_dir}common_icon_arrow_right.svg') no-repeat;
+      -webkit-background-size: 4px;
+           -o-background-size: 4px;
+              background-size: 4px;
+    }
+  }
+
+/* ==========================
+is-vertical
+========================== */
+
+.is-vertical--middle {
+  vertical-align: middle !important;
+}
+.is-vertical--top {
+  vertical-align: top !important;
+}
+.is-vertical--baseline {
+  vertical-align: baseline !important;
+}
+.is-vertical--text-bottom {
+  vertical-align: text-bottom !important;
+}
+
+/* ==========================
+is-color
+========================== */
+
+.is-color--white {
+  color: #FFF !important;
+}
+.is-color--black {
+  color: #000 !important;
+}
+.is-color--base {
+  color: darken($color_base, 5%) !important;
+}
+.is-color--important {
+  color: darken($color_important, 5%) !important;
+}
+
+/* ==========================
+is-BgColor
+========================== */
+
+.is-BgColor--base {
+  background: darken($color_base, 5%) !important;
+}
+.is-BgColor--important {
+  background: darken($color_important, 5%) !important;
+}
+
+/* ==========================
+is-hover--circle
+========================== */
+.is-hover--circle {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+.is-hover--circle::after {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 35%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: .3s; }
+.is-hover--circle:hover::after {
+  width: 180px;
+  height: 180px;
+  margin: -90px 0 0 -90px;
+}
+
+/* ==========================
+is-alpha--hover
+========================== */
+
+// alpha_hover:hover(透過)
+.is-alpha--hover,
+.is-alpha--hover img {
+  transition: all 0.4s ease;
+}
+.is-alpha--hover:hover,
+.is-alpha--hover:hover img {
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+}
+
+// is-hover--effect
+.is-hover--effect {
+  position: relative;
+  display: block;
+  &:hover {
+    img {
+      transform: rotate(0) scale(1);
+    }
+    .is-hover-caption {
+      transform: rotateY(0) rotateX(0);
+      opacity: 1;
+    }
+  }
+  .is-hover-caption {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    transform: rotateY(-90deg) rotateX(-90deg);
+    transition: all .3s;
+  }
+  .is-hover-more {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 28px;
+    height: 30px;
+    margin: auto;
+    &:before {
+      font-family: 'FontAwesome';
+      content: "\f002";
+      font-size: 20px;
+      color: #FFF;
+      display: inline-block;
+    }
+  }
+}
+
+// scaleUp:hover(透過)
+.is-scaleUp--img img {
+  -moz-transition: -moz-transform 0.5s linear;
+  -webkit-transition: -webkit-transform 0.5s linear;
+  -o-transition: -o-transform 0.5s linear;
+  -ms-transition: -ms-transform 0.5s linear;
+  transition: transform 0.5s linear;
+}
+
+.is-scaleUp--img img:hover {
+  scale: 1.2 ;
+}
+.is-scaleUp--img {
+	overflow: hidden;
+}
+// 三角(吹き出し等)
+.is-triangle--top {
+	@include module-triangle(10px, rgba(255, 255, 255, 0.2), top);
+}
+.is-triangle--right {
+	@include module-triangle(10px, rgba(255, 255, 255, 0.2), right);
+}
+.is-triangle--bottom {
+	@include module-triangle(10px, rgba(255, 255, 255, 0.2), bottom);
+}
+.is-triangle--left {
+	@include module-triangle(10px, rgba(255, 255, 255, 0.2), left);
+}
+.is-triangle--left--red {
+	@include module-triangle(10px, $color_base, left);
+}

@@ -1,0 +1,46 @@
+/* ============
+* label
+============== */
+
+%label {
+	display: inline-block;
+	border-radius: 4px;
+	text-align: center;
+}
+%label-font-small {
+	font-size: 11px;
+}
+%label-font-middle {
+	font-size: 13px;
+}
+%label-font-large {
+	font-size: 16px;
+}
+
+.m-label--keyword {
+	@extend %label;
+	@extend %label-font-middle;
+	padding: 3px 10px 2px;
+	color: #63C0B8;
+	border: 1px solid #AFD6D3;
+	&:hover {
+		background: lighten(#AFD6D3, 15%);
+	}
+}
+
+.m-label--rank {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	display: inline-block;
+	border-image-top: 10px solid $color_base;
+	border-image-right: 10px solid transparent;
+	border-image-bottom: 10px solid transparent;
+	border-image-left: 10px solid transparent;
+}
+
+.lm-abel--article_view {
+	font-size: 27px;
+	color: #D0B47B;
+}

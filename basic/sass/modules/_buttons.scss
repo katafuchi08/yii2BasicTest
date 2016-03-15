@@ -1,0 +1,262 @@
+
+
+/* ============
+* btn__wrap
+============== */
+.m-btn__wrap {
+	text-align: center;
+	a.m-btn {
+		float: left;
+		display: inline-block;
+		margin-left: 30px;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+.m-btn__wrap {
+	
+}
+
+
+
+
+/* ============
+* btn-style
+============== */
+.m-btn {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	margin: auto;
+	padding: 7px 10px;
+	background: none;
+	box-sizing: border-box;
+	border-radius: 2px;
+	color: #FFF;
+	text-align: center;
+	text-transform: uppercase;
+	cursor: pointer;
+	@include smoothing();
+	// transition: all 0.5s ease;
+	&:hover, &:focus {
+		color: #FFF;
+		text-decoration: none;
+	}
+	&:active {
+		color: #e7e7e7;
+	}
+	
+	&__facebook {
+		background: #5789B0;
+		&:hover {
+			background: darken(#5789B0, 15%);
+		}
+	}
+}
+
+
+
+.m-btn__twitter {
+	background: #69BDDB;
+	&:hover {
+		background: darken(#69BDDB, 15%);
+	}
+}
+.m-btn-googleplus {
+	background: #DB6969;
+	&:hover {
+		background: darken(#DB6969, 15%);
+	}
+}
+
+
+
+.btn-purple {
+	padding: 10px 13px;
+	background: $color_base;
+	border: 2px solid $color_base;
+	font-size: 14px;
+	letter-spacing: 1px;
+	&:hover {
+		background: #FFF;
+		color: lighten($color_base, 10%);
+		font-weight: 600;
+	}
+	// &:after {
+	// 	font-family: 'FontAwesome';
+	// 	content: "\f105";
+	// 	display: inline-block;
+	// 	margin-left: 10px;
+	// }
+}
+
+// .btn-gray {
+// 	padding: 10px 13px;
+// 	font-size: 14px;
+// 	letter-spacing: 1px;
+// 	border: 2px solid gray;
+// 	background: gray;
+// 	&:hover {
+// 		font-weight: 600;
+// 		color: lighten(gray, 10%);
+// 		background: #FFF;
+// 	}
+// 	// &:after {
+// 	// 	font-family: 'FontAwesome';
+// 	// 	content: "\f105";
+// 	// 	display: inline-block;
+// 	// 	margin-left: 10px;
+// 	// }
+// }
+
+.btn-outline {
+	margin-top: -10px;
+	padding: 5px 30px;
+	letter-spacing: 1px;
+	font-weight: 600;
+	border: 2px solid #fff;
+	border-radius: 50px;
+	-webkit-transition: all cubic-bezier(0.645, 0.045, 0.355,1) 0.4s;
+	transition: all cubic-bezier(0.645, 0.045, 0.355,1) 0.4s;
+	@include smoothing();
+	&:hover {
+		font-weight: 600;
+		color: $color_base;
+		background: #FFF;
+		&:before, &:after {
+			content: none;
+		}
+	}
+}
+
+
+
+// .btn-purple-dark {
+// 	padding: 10px 13px;
+// 	font-size: 14px;
+// 	letter-spacing: 1px;
+// 	border: 2px solid $color_base_dark;
+// 	background: $color_base_dark;
+// 	&:hover {
+// 		font-weight: 600;
+// 		color: $color_base_dark;
+// 		background: #FFF;
+// 	}
+// }
+
+// .btn-inline-menu {
+// 	display: inline-block;
+// 	width: 219px;
+// 	margin: 40px auto 0;
+// }
+
+// .btn--important {
+// 	padding: 17px 43px;
+// 	letter-spacing: 1px;
+// 	border: 1px solid $color_important;
+// 	background: $color_important;
+// 	&:hover {
+// 		color: $color_important;
+// 		background: #FFF;
+// 	}
+// }
+
+// .btn-green {
+// 	display: inline-block;
+// 	border: 0px;
+// 	background: #81D8D0;
+// 	border: 1px solid #74CDC4;
+// 	&:hover {
+// 		background: darken(#81D8D0, 12%);
+// 	}
+// }
+
+// .btn-reverse-green {
+// 	display: inline-block;
+// 	border: 1px solid #63C0B8;
+// 	background: #fff;
+// 	color: #63C0B8;
+// 	&:hover {
+// 		color: #fff;
+// 		background: darken(#63C0B8, 12%);
+// 	}
+// }
+
+// .btn-pink {
+// 	display: inline-block;
+// 	border: 0px;
+// 	background: #EDAEAE;
+// 	&:hover {
+// 		background: darken(#EDAEAE, 12%);
+// 	}
+// }
+
+// .btn-reverse-pink {
+// 	display: inline-block;
+// 	border: 1px solid #EDAEAE;
+// 	background: #fff;
+// 	color: #EDAEAE;
+// 	&:hover {
+// 		color: #fff;
+// 		background: darken(#EDAEAE, 12%);
+// 	}
+// }
+
+// .btn-gray {
+// 	border: 0px;
+// 	background: #C4C4C4;
+// 	// border: 1px solid #B7B7B7;
+// 	&:hover {
+// 		background: darken(#C4C4C4, 12%);
+// 	}
+// }
+
+// .btn-reverse-gray {
+// 	display: inline-block;
+// 	border: 1px solid #C4C4C4;
+// 	background: #fff;
+// 	color: #C4C4C4;
+// 	&:hover {
+// 		color: #fff;
+// 		background: darken(#C4C4C4, 12%);
+// 	}
+// }
+
+// .btn-light-brown {
+// 	border: 1px solid #CEBC8B;
+// 	background: #DDCB98;
+// 	&:hover {
+// 		background: darken(#DDCB98, 12%);
+// 	}
+// }
+
+
+
+/* ============
+* btn-font-size
+============== */
+.btn--biggest {
+	font-size: 30px;
+}
+.btn--x-large {
+	font-size: 25px;
+}
+.btn--large {
+	font-size: 15px;
+}
+.btn--middle {
+	font-size: 13px;
+}
+.btn--small {
+	font-size: 10px;
+}
+
+/* ============
+* btn-height-size
+============== */
+.btn-thin {
+	height: 22px;
+	padding: 0px 5px;
+	font-size: 11px;
+}
