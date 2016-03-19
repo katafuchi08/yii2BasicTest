@@ -1,10 +1,9 @@
 <?php
 
-namespace app\odels;
-
+namespace app\Models;
 use yii\base\Model;
 
-class EntryForm extend Model
+class EntryForm extends Model
 {
 	public $name;
 	public $email;

@@ -17,6 +17,21 @@ $this->title = 'My Yii Application';
     <div class="body-content">
 
         <div class="row">
+            <div class="col-lg-12">
+                pathInfo:<br>
+                <?php var_dump(Yii::$app->request->pathInfo) ?><br>
+                baseUrl:<br>
+                <?php var_dump(Yii::$app->request->baseUrl) ?><br>
+                pathInfo:<br>
+                <?php var_dump(Yii::$app->request->hostInfo) ?><br>
+                hostInfo:<br>
+                <?php var_dump(Yii::$app->request->userAgent) ?><br>
+                userIP:<br>
+                <?php var_dump(Yii::$app->request->userIP) ?><br>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-lg-4">
                 <h2>Heading</h2>
 
